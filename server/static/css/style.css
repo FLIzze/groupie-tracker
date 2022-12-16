@@ -15,6 +15,9 @@
 }
 
 .header {
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 94.3%;
     display: flex;
     justify-content: center;
     padding: 60px;
