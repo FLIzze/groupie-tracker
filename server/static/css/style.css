@@ -15,12 +15,9 @@
 }
 
 .header {
-    margin-top: -10px;
-    margin-left: -10px;
-    width: 94.3%;
     display: flex;
     justify-content: center;
-    padding: 60px;
+    padding: 110px;
     color: black;
     background-color: white;
     font-size: large;
@@ -29,6 +26,21 @@
 .texthead::selection {
     background-color: #476582;
     color: white;
+}
+
+.texthead2::selection {
+    background-color: #476582;
+    color: white;
+}
+
+.texthead {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.texthead2 {
+    font-size: 15px;
 }
 
 body {
@@ -79,6 +91,7 @@ body {
     height: 530px;  
     width: 240px;
     margin-top: 20px;
+    margin-bottom: 30px;
     outline-style: solid;
     outline-width: 2px;
     outline-color: black;
@@ -89,7 +102,14 @@ body {
     margin-top: 30px;
 }
 
-@media screen and (min-width: 556px) {
+@media screen and (min-width: 606px) {
+    .texthead {
+        font-size: 37px;
+    }
+    .texthead2 {
+        font-size: 16px;
+    }
+
     .imgsquare {
         border-top-right-radius: 0px;
         border-bottom-left-radius: 10px;
@@ -99,13 +119,6 @@ body {
     .bigsquaretext {
         font-size: 25px;
     }
-
-    .aurevoir {
-        color: white;
-        position: relative;
-        margin-top: 20px;
-        margin-left: 250px;
-    }
     
     .square {
         height: 240px;
@@ -114,6 +127,12 @@ body {
 }
 
 @media screen and (min-width: 1074px) {
+    .texthead {
+        font-size: 55px;
+    }
+    .texthead2 {
+        font-size: 18px;
+    }
     .container {
         display: grid;
         grid-template-columns: 50% 50%;
