@@ -17,7 +17,6 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 	//listening on port 8080
 
-	
 }
 
 func Handler_index(w http.ResponseWriter, r *http.Request) {

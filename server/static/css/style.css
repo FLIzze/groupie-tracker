@@ -15,6 +15,7 @@
 }
 
 .header {
+    margin: 0px;
     display: flex;
     justify-content: center;
     padding: 110px;
