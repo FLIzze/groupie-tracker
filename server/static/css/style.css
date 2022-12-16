@@ -12,7 +12,7 @@
 .square {
     background-color: #D8C8C8;
     margin: auto;
-    height: 530px;
+    height: 530px;  
     width: 240px;
     margin-top: 20px;
     outline-style: solid;
@@ -24,9 +24,26 @@
     top: 0px;
     left: 0px;
     position: absolute;
-    height: 183px;
+    height: 242px;
     width: 100%;
     background-color: #C5B0A1;
+}
+
+.navbar {
+    position: relative;
+    margin-top: 15px;
+    background-color: #EEEEEE;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    outline-style: solid;
+    outline-width: 1px;
+    border-style: solid;    
+    font-size: 25px;
+}
+#navbar {
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 556px) {
@@ -37,7 +54,7 @@
     }
     
     .head {
-        height: 263px;
+        height: 243px;
     }
     .square {
         height: 240px;
@@ -46,15 +63,7 @@
         outline-width: 1px;
     }
     .navbar {
-        position: relative;
-        margin: auto;
-        margin-top: 20px;
-        background-color: #EEEEEE;
-        height: 60px;
-        width: 65%;
-        border-radius: 40px;
-        outline-style: solid;
-        outline-width: 1px;
+        width: 80%;
     }
 }
 
@@ -72,7 +81,6 @@
 
 @media screen and (min-width: 1700px) {
     .container {
-        margin-top: 20px;
         display: grid;
         grid-template-columns: 33% 33% 33%;
         grid-template-areas: "detail detail detail";
