@@ -12,7 +12,7 @@
 .square {
     background-color: #D8C8C8;
     margin: auto;
-    height: 480px;
+    height: 530px;
     width: 240px;
     margin-top: 20px;
     outline-style: solid;
@@ -29,7 +29,13 @@
     background-color: #C5B0A1;
 }
 
-@media screen and (min-width: 486px) {
+@media screen and (min-width: 556px) {
+    .aurevoir {
+        position: relative;
+        margin-top: 20px;
+        margin-left: 250px;
+    }
+    
     .head {
         height: 263px;
     }
