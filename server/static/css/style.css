@@ -1,69 +1,90 @@
-.bigsquare {
+@font-face {
+    font-family: MilkyHoney;
+    src: url(/static/css/medias/RosmatikaRegular-BWA45.ttf);
+}
+
+body {
+    background-color: #202329;
+}
+
+.navbarsearch {
     position: relative;
-    margin: auto;
-    height: 166px;
-    width: 95%;
+    width: 115px;
+    height: 30px;
+    transition: width 1s;
+    font-size: large;
+}
+
+.navbarsearch:focus {
+    width: 60%;
+}
+
+.buttonnav {
+    margin-left: -40px;
+    margin-top: 5px;
+    position: relative;
+    width: 35px;
+    height: 25px;
+    border: none;
+    background:url(/static/css/medias/png-clipart-computer-icons-magnifying-glass-symbol-search-glass-magnifier-removebg-preview.png);
+    background-size:cover;
+}
+
+.navbar {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    margin-top: -10px;
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    color: black;
+    background-color: white;
+    font-size: large;
+}
+
+.imgsquare {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     outline-style: solid;
-    outline-width: 1px;
-    border-radius: 30px;
-    background-color: #EEEEEE;
+    outline-width: 2px;
+    outline-color: black;
 }
 
 .square {
-    background-color: #D8C8C8;
+    background-color: #476582;
     margin: auto;
     height: 530px;  
     width: 240px;
     margin-top: 20px;
     outline-style: solid;
-    outline-width: 1px;
+    outline-width: 2px;
+    outline-color: black;
     border-radius: 10px;
   }
 
-.head {
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    height: 242px;
-    width: 100%;
-    background-color: #C5B0A1;
-}
-
-.navbar {
-    position: relative;
-    margin-top: 15px;
-    background-color: #EEEEEE;
-    height: 40px;
-    width: 100%;
-    border-radius: 10px;
-    outline-style: solid;
-    outline-width: 1px;
-    border-style: solid;    
-    font-size: 25px;
-}
-#navbar {
-    display: flex;
-    justify-content: center;
+.container {
+    margin-top: 30px;
 }
 
 @media screen and (min-width: 556px) {
+    .bigsquaretext {
+        font-size: 25px;
+    }
+
     .aurevoir {
+        color: white;
         position: relative;
         margin-top: 20px;
         margin-left: 250px;
     }
     
-    .head {
-        height: 243px;
-    }
     .square {
         height: 240px;
         width: 95%;
-        outline-style: solid;
-        outline-width: 1px;
-    }
-    .navbar {
-        width: 80%;
     }
 }
 

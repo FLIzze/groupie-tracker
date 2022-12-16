@@ -16,6 +16,8 @@ func main() {
 	fmt.Print("Le Serveur dÃ©marre sur le port 8080\n")
 	http.ListenAndServe(":8080", nil)
 	//listening on port 8080
+
+	
 }
 
 func Handler_index(w http.ResponseWriter, r *http.Request) {
