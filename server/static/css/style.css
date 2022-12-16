@@ -1,11 +1,12 @@
 .bigsquare {
+    position: relative;
     margin: auto;
     height: 166px;
     width: 95%;
-    background-color: #D8C8C8;
     outline-style: solid;
     outline-width: 1px;
     border-radius: 30px;
+    background-color: #EEEEEE;
 }
 
 .square {
@@ -19,7 +20,19 @@
     border-radius: 10px;
   }
 
+.head {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 183px;
+    width: 100%;
+    background-color: #C5B0A1;
+}
+
 @media screen and (min-width: 486px) {
+    .head {
+        height: 263px;
+    }
     .square {
         height: 240px;
         width: 95%;
@@ -27,10 +40,11 @@
         outline-width: 1px;
     }
     .navbar {
+        position: relative;
         margin: auto;
         margin-top: 20px;
-        background-color: #D8C8C8;
-        height: 80px;
+        background-color: #EEEEEE;
+        height: 60px;
         width: 65%;
         border-radius: 40px;
         outline-style: solid;
@@ -52,6 +66,7 @@
 
 @media screen and (min-width: 1700px) {
     .container {
+        margin-top: 20px;
         display: grid;
         grid-template-columns: 33% 33% 33%;
         grid-template-areas: "detail detail detail";
