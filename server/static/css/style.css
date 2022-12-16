@@ -3,6 +3,31 @@
     src: url(/static/css/medias/RosmatikaRegular-BWA45.ttf);
 }
 
+
+.filter {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+    color: black;
+    background-color: white;
+    font-size: large;
+}
+
+.texthead::selection {
+    background-color: #476582;
+    color: white;
+}
+
 body {
     background-color: #202329;
 }
@@ -16,7 +41,7 @@ body {
 }
 
 .navbarsearch:focus {
-    width: 60%;
+    width: 50%;
 }
 
 .buttonnav {
@@ -36,19 +61,10 @@ body {
     justify-content: center;
 }
 
-.header {
-    margin-top: -10px;
-    display: flex;
-    justify-content: center;
-    padding: 70px;
-    color: black;
-    background-color: white;
-    font-size: large;
-}
 
 .imgsquare {
     border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
     outline-style: solid;
     outline-width: 2px;
     outline-color: black;
@@ -71,6 +87,12 @@ body {
 }
 
 @media screen and (min-width: 556px) {
+    .imgsquare {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+
+    }
+
     .bigsquaretext {
         font-size: 25px;
     }
@@ -95,6 +117,7 @@ body {
         grid-template-areas: "detail detail";
         grid-auto-columns: 150px;
     }
+    
     .square {
         width: 95%;
     }
