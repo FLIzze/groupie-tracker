@@ -9,14 +9,13 @@ import (
 )
 
 type people struct {
-	Id       int    `json:"Id"`
-	Name     string `json:"Name"`
-	Status   string `json:"Status"`
-	Image    string `json:"Image"`
-	Members  string `json:"Members"`
-	Location string `json:"Location"`
-	First    string `json:"First release"`
-	Creation string `json:"Creation"`
+	Id           int      `json:"Id"`
+	Name         string   `json:"Name"`
+	Image        string   `json:"Image"`
+	Members      []string `json:"Members"`
+	Location     string   `json:"Location"`
+	FirstAlbum   string   `json:"FirstAlbum"`
+	CreationDate string   `json:"CreationDate"`
 }
 
 func main() {
