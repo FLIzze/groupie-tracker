@@ -9,8 +9,14 @@ import (
 )
 
 type people struct {
-	Id   int    `json:"Id"`
-	Name string `json:"Name"`
+	Id       int    `json:"Id"`
+	Name     string `json:"Name"`
+	Status   string `json:"Status"`
+	Image    string `json:"Image"`
+	Members  string `json:"Members"`
+	Location string `json:"Location"`
+	First    string `json:"First release"`
+	Creation string `json:"Creation"`
 }
 
 func main() {
@@ -24,28 +30,11 @@ func main() {
 		log.Fatal(readErr)
 	}
 
-	id1 := []people{}
-	jsonErr := json.Unmarshal(body, &id1)
+	text := []people{}
+	jsonErr := json.Unmarshal(body, &text)
 	if jsonErr != nil {
 		log.Fatal(jsonErr)
 	}
 
-	fmt.Println(id1)
+	fmt.Println(text)
 }
-
-//requestURL := "https://groupietrackers.herokuapp.com/api/artists"
-//request := := http.NewRequest()
-//contenu := requests.get(requestURL)
-//list := contenu.json()
-//request.send()
-
-//textBytes := []byte(text)
-
-//people1 := people{}
-//err := json.Unmarshal(textBytes, &people1)
-//if err != nil {
-//fmt.Println(err)
-//return
-//}
-//fmt.Println(people1.Name)
-//}
