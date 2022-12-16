@@ -1,0 +1,60 @@
+.bigsquare {
+    margin: auto;
+    height: 166px;
+    width: 95%;
+    background-color: #D8C8C8;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 30px;
+}
+
+.square {
+    background-color: #D8C8C8;
+    margin: auto;
+    height: 480px;
+    width: 240px;
+    margin-top: 20px;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 10px;
+  }
+
+@media screen and (min-width: 486px) {
+    .square {
+        height: 240px;
+        width: 95%;
+        outline-style: solid;
+        outline-width: 1px;
+    }
+    .navbar {
+        margin: auto;
+        margin-top: 20px;
+        background-color: #D8C8C8;
+        height: 80px;
+        width: 65%;
+        border-radius: 40px;
+        outline-style: solid;
+        outline-width: 1px;
+    }
+}
+
+@media screen and (min-width: 1074px) {
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "detail detail";
+        grid-auto-columns: 150px;
+    }
+    .square {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-areas: "detail detail detail";
+        grid-auto-columns: 150px;
+    }
+}
