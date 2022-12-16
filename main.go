@@ -15,7 +15,7 @@ type people struct {
 	Members      []string `json:"Members"`
 	Location     string   `json:"Location"`
 	FirstAlbum   string   `json:"FirstAlbum"`
-	CreationDate string   `json:"CreationDate"`
+	CreationDate int      `json:"CreationDate"`
 }
 
 func main() {
@@ -37,3 +37,5 @@ func main() {
 
 	fmt.Println(text)
 }
+
+// Je le laisse là pour l'instant au cas où, on sait jamais.

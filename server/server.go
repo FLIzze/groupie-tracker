@@ -27,7 +27,7 @@ func main() {
 		Members      []string `json:"Members"`
 		Location     string   `json:"Location"`
 		FirstAlbum   string   `json:"FirstAlbum"`
-		CreationDate string   `json:"CreationDate"`
+		CreationDate int      `json:"CreationDate"`
 	}
 	url := "https://groupietrackers.herokuapp.com/api/artists"
 	res, err := http.Get(url)
