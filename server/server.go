@@ -1,15 +1,18 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
+
+	goApi()
+
 	http.HandleFunc("/", Handler_index)
 	// //url of our funcs
 
@@ -19,7 +22,14 @@ func main() {
 	fmt.Print("Le Serveur dÃ©marre sur le port 8080\n")
 	http.ListenAndServe(":8080", nil)
 	//listening on port 8080
+}
 
+func Handler_index(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("./static/index.html"))
+	tmpl.Execute(w, r)
+}
+
+func goApi() {
 	type people struct {
 		Id           int      `json:"Id"`
 		Name         string   `json:"Name"`
@@ -29,26 +39,17 @@ func main() {
 		FirstAlbum   string   `json:"FirstAlbum"`
 		CreationDate int      `json:"CreationDate"`
 	}
-	url := "https://groupietrackers.herokuapp.com/api/artists"
-	res, err := http.Get(url)
+
+	response, err := http.Get("https://groupietrackers.herokuapp.com/api/artists")
+
 	if err != nil {
-		print(err)
-	}
-	body, readErr := ioutil.ReadAll(res.Body)
-	if readErr != nil {
-		log.Fatal(readErr)
+		fmt.Print(err.Error())
+		os.Exit(1)
 	}
 
-	text := []people{}
-	jsonErr := json.Unmarshal(body, &text)
-	if jsonErr != nil {
-		log.Fatal(jsonErr)
+	responseData, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		log.Fatal(err)
 	}
-
-	fmt.Println(text)
-}
-
-func Handler_index(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("./static/index.html"))
-	tmpl.Execute(w, r)
+	fmt.Println(string(responseData))
 }
