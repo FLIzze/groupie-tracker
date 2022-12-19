@@ -1,17 +1,47 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 )
 
-func main() {
+type people struct {
+	Id           int      `json:"Id"`
+	Name         string   `json:"Name"`
+	Image        string   `json:"Image"`
+	Members      []string `json:"Members"`
+	Location     string   `json:"Location"`
+	FirstAlbum   string   `json:"FirstAlbum"`
+	CreationDate int      `json:"CreationDate"`
+}
 
-	goApi()
+var api people
+
+func main() {
+	url := "https://groupietrackers.herokuapp.com/api/artists"
+	res, err := http.Get(url)
+	if err != nil {
+		print(err)
+	}
+	body, readErr := ioutil.ReadAll(res.Body)
+	if readErr != nil {
+		log.Fatal(readErr)
+	}
+
+	text := []people{}
+	jsonErr := json.Unmarshal(body, &text)
+	if jsonErr != nil {
+		log.Fatal(jsonErr)
+	}
+
+	fmt.Println(text)
+
+	api.Id = 3
+	api.Name = "queen"
 
 	http.HandleFunc("/", Handler_index)
 	// //url of our funcs
@@ -26,30 +56,6 @@ func main() {
 
 func Handler_index(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("./static/index.html"))
-	tmpl.Execute(w, r)
-}
-
-func goApi() {
-	type people struct {
-		Id           int      `json:"Id"`
-		Name         string   `json:"Name"`
-		Image        string   `json:"Image"`
-		Members      []string `json:"Members"`
-		Location     string   `json:"Location"`
-		FirstAlbum   string   `json:"FirstAlbum"`
-		CreationDate int      `json:"CreationDate"`
-	}
-
-	response, err := http.Get("https://groupietrackers.herokuapp.com/api/artists")
-
-	if err != nil {
-		fmt.Print(err.Error())
-		os.Exit(1)
-	}
-
-	responseData, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(string(responseData))
+	fmt.Println(api.Id, api.Name)
+	tmpl.Execute(w, api)
 }
