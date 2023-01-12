@@ -87,7 +87,7 @@ body {
 
 .imgsquare {
     border-radius: 10px;
-    width: 100%;
+    
 }
 
 .container {
@@ -100,7 +100,8 @@ body {
 }
 
 .box {
-    width: 244px;
+    width: 240px;
+    height: 240px;
     border-radius: 10px;
     outline-style: solid;
     outline-width: 2px;
@@ -161,5 +162,11 @@ body {
 @media screen and (min-width: 1490px) {
     #box4 {
         grid-column: 4;
+    }
+}
+
+@media screen and (min-width: 1890px) {
+    #box5 {
+        grid-column: 5;
     }
 }
