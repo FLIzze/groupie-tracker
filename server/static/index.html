@@ -35,14 +35,15 @@
     </div>
 
     <div class="container">
+        {{ range $people := .}}
         <div class="box" id="box1">
             <div class="text">
-                {{ .Id }}
-                <br>
                 {{ .Name }}
+                
             </div>
-            <img src="/static/css/medias/queen.jpeg" class="imgsquare">
+            <img src="{{ .Image }}" class="imgsquare">
         </div>
+        {{ end }}
         
         <div class="box" id="box2">
             <img src="/static/css/medias/queen.jpeg" class="imgsquare">
