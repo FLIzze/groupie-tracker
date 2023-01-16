@@ -8,17 +8,15 @@
     <title>groupie</title>
 </head>
 
-<body>
-    <div class="header">
-        <h1 class="texthead">Groupie Tracker</h1>
-        <p class="texthead2">By BELLEB.</p>
+<header>
+    <div class="texthead">
+        <a style="text-decoration: none;" class="texthead1" title="link to gitea" href="https://ytrack.learn.ynov.com/git/balexand/groupie-tracker">Groupie</a>
+        <a style="text-decoration: none;" class="texthead2" title="refresh" href="http://localhost:8080/main">Tracker</a>
     </div>
-    
-    <div class="navbar">
-        <input type="text" class="navbarsearch" placeholder="Search..">
-        <button class="buttonnav"></button>
-    </div>
-    
+    <input type="text" class="searchbar">
+</header>
+
+<body>        
     <div class="container">
         {{ range $people := .}}
         <div class="box" id="box{{ .Id }}" onclick="enlarge('box{{ .Id }}','imgsquare{{ .Id }}','divtext{{ .Id }}')">
@@ -40,6 +38,12 @@
     </div>
     <script>
         function enlarge(boxdiv, imgdiv, divtext) {
+            if (window.innerWidth < 660)
+            {
+                return 0
+            }
+            else
+            {
             var xDiv = document.getElementById(boxdiv);
             var yDiv = document.getElementById(imgdiv);
             var wDiv = document.getElementById(divtext);
@@ -73,6 +77,7 @@
                 }, 700)
                 }
         }
+    }
     </script>
 </body>
 </html>

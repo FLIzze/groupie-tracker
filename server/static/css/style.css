@@ -1,16 +1,24 @@
+body {
+    min-width: 660px;
+}
+
+header {
+    min-width: 660px;
+}
+
 @font-face {
     font-family: Tisa;
-    src: url(./medias/Tisa\ Sans\ Pro\ Medium.ttf.ttf);
+    src: url(./medias/Tisa\ Sans\ Pro\ Medium.ttf);
 }
 
 .greytext {
     color: grey;
     white-space: pre;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .basictext {
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .noHover {
@@ -35,45 +43,47 @@
     font-family: Tisa;
 }
 
-.filter {
-    margin-top: 2%;
-    width: 100%;
-    height: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+.buttonsearchbar {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    color: black;
-    background-color: white;
-    font-size: large;
-    font-family: Tisa;
+.searchbar {
+    border:none;
+    border-radius: 5px;
+    outline: 0px;
+    position: absolute;
+    width: 50%;
+    height: 30px;
+    padding-left: 5px;
+    margin-top: -41.5px;
+    margin-left: 250px;
+    font-size: 16px;
 }
 
-.texthead::selection {
-    background-color: #476582;
-    color: white;
+.searchbar:focus {
+    outline: 3px solid;
+    outline-color: orange;
 }
 
-.texthead2::selection {
-    background-color: #476582;
-    color: white;
-}
+
 
 .texthead {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
+    padding: 5px;
     font-family: Tisa;
+    font-size: 30px;
+    background-color: #36445c;
+    margin:auto;
+}
+
+.texthead1 {
+    color: white;
+    margin-left: 15px;
 }
 
 .texthead2 {
-    font-size: 20px;
-    font-family: Tisa;
+    color: grey;
 }
 
 body {
@@ -81,45 +91,26 @@ body {
     margin: 0px;
 }
 
-.hidden:checked ~ .text {
-    opacity: 0;
-    display: none;
+.header {
+    background-color: #36445c;
+    color: white;
 }
 
-.navbarsearch {
-    position: relative;
-    width: 130px;
-    height: 30px;
-    transition: width 1s;
-    font-size: large;
-    margin-top: 10px;
-}
-
-.navbarsearch:focus {
-    width: 40%;
-}
-
-.buttonnav {
-    margin-left: -2%;
-    margin-top: 15px;
+/* .buttonnav {
+    margin-left: -45px;
+    margin-top: 13px;
     position: relative;
     width: 2%;
     height: 25px;
     border: none;
     background:url(/static/css/medias/png-clipart-computer-icons-magnifying-glass-symbol-search-glass-magnifier-removebg-preview.png);
     background-size:cover;
-}
+} */
 
 .show {
     display: none;
     position: relative;
     margin:auto;
-}
-
-.navbar {
-    margin-top: 2%;
-    display: flex;
-    justify-content: center;
 }
 
 .imgsquare {
@@ -130,14 +121,14 @@ body {
 }
 
 .container {
-    margin-top: 70px;   
+    margin-bottom: 15px;
+    margin-top: 30px;   
     margin-left: 50px;
     margin-right: 50px;
     display: flex;
-    grid-gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
-    grid-gap: 65px;
+    grid-gap: 55px;
 }
 
 .box {
@@ -154,71 +145,18 @@ body {
     background-color: black;
 }
 
-.box:hover > .show {
-    display: flex;
-    justify-content: center;
-    margin-top: 50%;
-}
-
-[class="show{@id}"]:hover > .text {
-    display: block;
-}
-
 .imgsquare:hover {
     opacity: 0;
 }
 
-/* @media screen and (min-width: 616px) {
-    .texthead {
-        font-size: 37px;
-    }
-    .texthead2 {
-        font-size: 16px;
-    }
-    .imgsquare {
-        border-bottom-left-radius: 10px;
-
-    }
-    .bigsquaretext {
-        font-size: 25px;
-    }
-    #box1 {
-        grid-column: 1;
-    }
-    #box2 {
-        grid-column: 2;
-    }
-    .filter {
-        margin-top: 20px;
+@media screen and (max-width: 965px) {
+    .container {
+        grid-gap: 25px;
     }
 }
 
-@media screen and (min-width: 930px) {
-    #box2 {
-        grid-column: 2;
-    }
-    .texthead {
-        font-size: 55px;
-    }
-    .texthead2 {
-        font-size: 18px;
+@media screen and (max-width: 324px) {
+    body {
+        resize: none;
     }
 }
-
-@media screen and (min-width: 1200px) {
-    #box3 {
-        grid-column: 3;
-    }
-}
-
-@media screen and (min-width: 1490px) {
-    #box4 {
-        grid-column: 4;
-    }
-}
-
-@media screen and (min-width: 1890px) {
-    #box5 {
-        grid-column: 5;
-    }
-} */
