@@ -11,9 +11,12 @@
 <header>
     <div class="texthead">
         <a style="text-decoration: none;" class="texthead1" title="link to gitea" href="https://ytrack.learn.ynov.com/git/balexand/groupie-tracker">Groupie</a>
-        <a style="text-decoration: none;" class="texthead2" title="refresh" href="http://localhost:8080/main">Tracker</a>
+        <a style="text-decoration: none;" class="texthead2" title="refresh" href="http://localhost:8080/    ">Tracker</a>
     </div>
-    <input type="text" class="searchbar">
+    <div class="bardiv">
+        <button type="submit" class="buttonsearchbar"></button>
+        <input type="text" class="searchbar">
+    </div>
 </header>
 
 <body>        
@@ -22,7 +25,8 @@
         <div class="box" id="box{{ .Id }}" onclick="enlarge('box{{ .Id }}','imgsquare{{ .Id }}','divtext{{ .Id }}')">
             <img src="{{ .Image }}" class="imgsquare" id="imgsquare{{ .Id }}">
             <div class="text", id="divtext{{ .Id }}">
-                <h2 class="Name">{{ .Name }}  </h2>
+                <a class="title">{{ .Name }}  </a>
+                <br>
                 <span class="greytext">Created in</span>
                 <a class="basictext">{{ .CreationDate }}</a>
                 <br>
@@ -36,14 +40,9 @@
         </div>
         {{ end }}
     </div>
+
     <script>
         function enlarge(boxdiv, imgdiv, divtext) {
-            if (window.innerWidth < 660)
-            {
-                return 0
-            }
-            else
-            {
             var xDiv = document.getElementById(boxdiv);
             var yDiv = document.getElementById(imgdiv);
             var wDiv = document.getElementById(divtext);
@@ -75,9 +74,8 @@
                     wDiv.classList.remove("hidden")
                     wDiv.style.marginLeft = "5px"
                 }, 700)
-                }
+            }
         }
-    }
     </script>
 </body>
 </html>
