@@ -13,40 +13,66 @@
         <h1 class="texthead">Groupie Tracker</h1>
         <p class="texthead2">By BELLEB.</p>
     </div>
-
+    
     <div class="navbar">
         <input type="text" class="navbarsearch" placeholder="Search..">
         <button class="buttonnav"></button>
     </div>
-    <div class="filter">
-        <fieldset class="fieldset">
-            <legend>FILTER</legend>
-            <input type="radio" id="by_name" name="test">
-            <label for="by_name" class="labelfield">by name</label>
-            <input type="radio" id="by_member" name="test">
-            <label for="by_member" class="labelfield">by member</label>
-            <input type="radio" id="by_location" name="test">
-            <label for="by_location" class="labelfield">by location</label>
-            <input type="radio" id="by_first_almbum_date" name="test">
-            <label for="by_first_almbum_date" class="labelfield">by first almbum date</label>
-            <input type="radio" id="by_creation_date" name="test">
-            <label for="by_creation_date" class="labelfield">by creation date</label>   
-        </fieldset>
-    </div>
-
+    
     <div class="container">
         {{ range $people := .}}
-        <div class="box" id="box1">
-            <div class="text">
-                {{ .Name }}               
+        <div class="box" id="box{{ .Id }}" onclick="enlarge('box{{ .Id }}','imgsquare{{ .Id }}','divtext{{ .Id }}')">
+            <img src="{{ .Image }}" class="imgsquare" id="imgsquare{{ .Id }}">
+            <div class="text", id="divtext{{ .Id }}">
+                <h2 class="Name">{{ .Name }}  </h2>
+                <span class="greytext">Created in</span>
+                <a class="basictext">{{ .CreationDate }}</a>
+                <br>
+                <span class="greytext">First album</span>
+                <a class="basictext">{{ .FirstAlbum }}</a>
+                <br>
+                <span class="greytext">Members</span>
+                <a class="basictext">{{ .Members }}</a>
             </div>
-            <img src="{{ .Image }}" class="imgsquare">
+
         </div>
         {{ end }}
     </div>
+    <script>
+        function enlarge(boxdiv, imgdiv, divtext) {
+            var xDiv = document.getElementById(boxdiv);
+            var yDiv = document.getElementById(imgdiv);
+            var wDiv = document.getElementById(divtext);
 
+            if (xDiv.style.width < '400px')
+            {
+                wDiv.classList.remove("notHidden")
+                wDiv.classList.add("hidden")
+                xDiv.style.width = '550px' 
+                yDiv.style.borderTopRightRadius = "0px"
+                yDiv.style.borderBottomRightRadius = "0px"
+                yDiv.classList.add("noHover")
+                setTimeout(function() {
+                    wDiv.style.marginLeft = "245px"
+                    wDiv.classList.add("notHidden")
+                    wDiv.classList.remove("hidden")
+                }, 700)
+                }
+            else 
+            {
+                wDiv.classList.add("hidden")
+                wDiv.classList.remove("notHidden")
+                yDiv.classList.remove("noHover")
+                yDiv.style.borderTopRightRadius = "10px"
+                yDiv.style.borderBottomRightRadius = "10px"
+                xDiv.style.width = '240px' 
+                setTimeout(function() {
+                    wDiv.classList.add("notHidden")
+                    wDiv.classList.remove("hidden")
+                    wDiv.style.marginLeft = "5px"
+                }, 700)
+                }
+        }
+    </script>
 </body>
 </html>
-
-        
-       
