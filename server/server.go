@@ -52,5 +52,9 @@ func Handler_main(w http.ResponseWriter, r *http.Request) {
 	}
 	tmpl := template.Must(template.ParseFiles("./static/index.html"))
 	fmt.Println(api.Id, api.Name)
+
+	input := r.FormValue("inputfilter")
+	fmt.Println(input)
+
 	tmpl.Execute(w, text)
 }
