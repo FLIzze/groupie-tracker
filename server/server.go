@@ -53,8 +53,17 @@ func Handler_main(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("./static/index.html"))
 	fmt.Println(api.Id, api.Name)
 
-	input := r.FormValue("inputfilter")
-	fmt.Println(input)
+	principalinput := r.FormValue("inputfilter")
+	fmt.Println(principalinput)
+
+	inputconcert := r.FormValue("concertsinput")
+	fmt.Println(inputconcert)
+
+	inputslide1 := r.FormValue("firstalbum")
+	fmt.Println(inputslide1)
+
+	inputslide2 := r.FormValue("created")
+	fmt.Println(inputslide2)
 
 	tmpl.Execute(w, text)
 }
