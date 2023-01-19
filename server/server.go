@@ -65,5 +65,8 @@ func Handler_main(w http.ResponseWriter, r *http.Request) {
 	inputslide2 := r.FormValue("created")
 	fmt.Println(inputslide2)
 
+	checkbox := r.FormValue("submit")
+	fmt.Println(checkbox)
+
 	tmpl.Execute(w, text)
 }
