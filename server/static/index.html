@@ -62,10 +62,16 @@
             {
                 wDiv.classList.remove("notHidden")
                 wDiv.classList.add("hidden")
-                xDiv.style.width = '550px' 
                 yDiv.style.borderTopRightRadius = "0px"
                 yDiv.style.borderBottomRightRadius = "0px"
                 yDiv.classList.add("noHover")
+                if (window.innerWidth < "966")
+                {
+                    xDiv.style.width = '500px'
+                } 
+                else {
+                    xDiv.style.width = '540px' 
+                }
                 setTimeout(function() {
                     wDiv.style.marginLeft = "245px"
                     wDiv.classList.add("notHidden")

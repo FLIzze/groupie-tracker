@@ -76,7 +76,7 @@ html {
     outline: 0px;
     grid-column: 2;
     display: grid;
-    width: 345px;
+    width: 35%;
     height: 30px;
     padding-left: 4px;
     font-size: 17.5px;
@@ -200,14 +200,14 @@ body {
 
 .filters {
     font-family: Tisa;
-    opacity: 0.8;
+    opacity: 0.9;
     font-size: 17px;
     position: absolute;
     display: none;
     background-color: black;
     color: white;
     height: 125px;
-    width: 160px;
+    width: 130px;
     transition: all 2s;
 }
 
@@ -215,7 +215,6 @@ body {
     width: 100%;
     top: 0;
     display: flex;
-    justify-content: center;
 }
 
 .filtertext:hover {
