@@ -61,8 +61,6 @@ function submit(form) {
 
 const searchInput = document.querySelector("[data-search]")
 
-console.log(objApi)
-
 let bandName = []
 let membersName = []
 let albumDate = []
@@ -71,10 +69,7 @@ let creationDate = []
 searchInput.addEventListener("input", e => {
     const value = e.target.value.toLowerCase()
     console.log(value)
-})
+}) 
 
-.then(data => {
-    user = data.map(user => {
-        return { bandName: user.bandName, membersName: user.membersName}
-    })
-})
+objApi.filter(Id => Id < 10);
+console.log(objApi);
