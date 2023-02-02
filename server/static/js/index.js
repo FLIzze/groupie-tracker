@@ -59,3 +59,11 @@ function slidechange2() {
 function submit(form) {
     form.submit()
 }
+
+const searchInput = document.querySelector("[data-search]")
+
+searchInput.addEventListener("input", e => {
+    const value = e.target.value.toLowerCase()
+    console.log(value)
+})
+

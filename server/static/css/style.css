@@ -126,16 +126,9 @@ body {
     font-size: 22px;
 }
 
-/* .buttonnav {
-    margin-left: -45px;
-    margin-top: 13px;
-    position: relative;
-    width: 2%;
-    height: 25px;
-    border: none;
-    background:url(/static/css/medias/png-clipart-computer-icons-magnifying-glass-symbol-search-glass-magnifier-removebg-preview.png);
-    background-size:cover;
-} */
+.dontDisplay {
+    display: none;
+}
 
 .show {
     display: none;
@@ -229,7 +222,7 @@ body {
     background-color: black;
     color: white;
     height: 125px;
-    width: 40 0px;
+    width: 400px;
     transition: all 2s;
 }
 
