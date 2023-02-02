@@ -13,12 +13,11 @@
         <div class="texts">
             <a style="text-decoration: none;" class="texthead1" title="link to gitea" href="https://ytrack.learn.ynov.com/git/balexand/groupie-tracker">Groupie</a>
             <a style="text-decoration: none;" class="texthead2" title="refresh" href="http://localhost:8080/">Tracker</a>
-        </div>
-        <div class="search-wrapper">
-            <label for="search"></label>
-            <input type="search" class="searchbar" id="search" data-search>
-        </div>
+        </div>      
         <div class="bardiv">
+            <form action="/" method="get" href="">
+                <input type="text" class="searchbar" name="inputfilter" list="dataList" autocomplete="off" data-search>
+            </form>
             <div class="filtersshow">Filters
                 <div class="filters">
                     <form action="" method="get">
@@ -62,11 +61,19 @@
 
 <body>        
     <div class="container">
+        <datalist id="dataList">
+            {{ range $people := .}}
+            <option value="{{ .Name }}">{{ .Name }}</option>
+            <option value="{{ .Members }}">{{ .Members }}</option>
+            <option value="{{ .FirstAlbum }}">{{ .FirstAlbum }}</option>
+            <option value="{{ .CreationDate }}">{{ .CreationDate }}</option>
+            {{ end }}
+        </datalist>
         {{ range $people := .}}
         <div class="box" id="box{{ .Id }}" onclick="enlarge('box{{ .Id }}','imgsquare{{ .Id }}','divtext{{ .Id }}')">
             <img src="{{ .Image }}" class="imgsquare" id="imgsquare{{ .Id }}">
             <div class="text", id="divtext{{ .Id }}">
-                <a class="title">{{ .Name }}  </a>
+                <a class="title">{{ .Name }}</a>
                 <br>
                 <span class="greytext">Created in</span>
                 <a class="basictext">{{ .CreationDate }}</a>
@@ -81,7 +88,10 @@
         </div>
         {{ end }}
     </div>
-
+    
+    <script>
+        const objApi = {{ . }};
+    </script>
     <script src="/static/js/index.js" type="text/javascript">
     </script>
 </body>

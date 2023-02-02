@@ -51,7 +51,6 @@ func Handler_main(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(jsonErr)
 	}
 	tmpl := template.Must(template.ParseFiles("./static/index.html"))
-	fmt.Println(api.Id, api.Name)
 
 	principalinput := r.FormValue("inputfilter")
 	fmt.Println(principalinput)
