@@ -10,6 +10,7 @@ function enlarge(boxdiv, imgdiv, divtext) {
         yDiv.style.borderTopRightRadius = "0px"
         yDiv.style.borderBottomRightRadius = "0px"
         yDiv.classList.add("noHover")
+        yDiv.style.display = "none"
         if (window.innerWidth < "966")
         {
             xDiv.style.width = '500px'
@@ -18,7 +19,6 @@ function enlarge(boxdiv, imgdiv, divtext) {
             xDiv.style.width = '540px' 
         }
         setTimeout(function() {
-            wDiv.style.marginLeft = "245px"
             wDiv.classList.add("notHidden")
             wDiv.classList.remove("hidden")
         }, 700)
@@ -28,13 +28,13 @@ function enlarge(boxdiv, imgdiv, divtext) {
         wDiv.classList.add("hidden")
         wDiv.classList.remove("notHidden")
         yDiv.classList.remove("noHover")
+        yDiv.style.display = "block"
         yDiv.style.borderTopRightRadius = "10px"
         yDiv.style.borderBottomRightRadius = "10px"
         xDiv.style.width = '240px' 
         setTimeout(function() {
             wDiv.classList.add("notHidden")
             wDiv.classList.remove("hidden")
-            wDiv.style.marginLeft = "5px"
         }, 700)
     }
 }
@@ -45,6 +45,17 @@ function slidechange1() {
     print.innerText = change.value;
 
     const form = document.getElementById("slide1")
+
+    console.log(change.value)
+
+    for (i = 0; i < 52; i++) {
+        li = document.getElementById(`box${i+1}`)
+        if (albumDate[i].includes(change.value)) {
+            li.style.display = "flex";
+        } else {
+            li.style.display = "none";
+        }
+    }
 }
 
 function slidechange2() {
@@ -53,10 +64,15 @@ function slidechange2() {
     print.innerText = change.value;
 
     const form = document.getElementById("slide2")
-}
 
-function submit(form) {
-    form.submit()
+    for (i = 0; i < 52; i++) {
+        li = document.getElementById(`box${i+1}`)
+        if (creationDate[i].includes(change.value)) {
+            li.style.display = "flex";
+        } else {
+            li.style.display = "none";
+        }
+    }
 }
 
 const searchInput = document.querySelector("[data-search]")
@@ -66,10 +82,55 @@ let membersName = []
 let albumDate = []
 let creationDate = []
 
-searchInput.addEventListener("input", e => {
+objApi.forEach(artist => {
+    bandName.push(artist.Name.toLowerCase()) //k
+    membersName.push(artist.Members) //k
+    albumDate.push(artist.FirstAlbum) //k
+    creationDate.push(artist.CreationDate.toString())  //k
+});
+
+const artistsCards = [];
+for (i = 1; i < 53; i++) {
+    li = document.getElementById(`box${i}`)
+    artistsCards.push(li)
+}
+
+searchInput.addEventListener("input", e => {  
     const value = e.target.value.toLowerCase()
-    console.log(value)
+        for (i = 0; i < 52; i++) {
+        li = document.getElementById(`box${i+1}`)
+        if (bandName[i].includes(value)) {
+            li.style.display = "flex";
+        } else if (albumDate[i].includes(value)) {
+            li.style.display = "flex";
+        } else if (creationDate[i].includes(value)) {
+            li.style.display = "flex";
+        } else if ((membersName[i].join(' ').toLowerCase()).includes(value)) {
+            li.style.display = "flex";
+        } else {
+            li.style.display = "none";  
+        }
+    }
 }) 
 
-objApi.filter(Id => Id < 10);
-console.log(objApi);
+function validate() {
+    displayNothing();
+    for (i = 1; i < 8; i++) {
+        if (document.getElementById('checkbox'+i).checked) {
+            for (j = 0; j < 52; j++) {
+                li = document.getElementById(`box${j+1}`)
+                if (membersName[j].length == i) {
+                        console.log(membersName[j].length);
+                        console.log(membersName[j])
+                        li.style.display = "flex";
+                 }  
+            }   
+        }
+    }
+}
+
+function displayNothing() {
+    for (i = 1; i < 53; i++) { 
+        document.getElementById('box'+i).style.display = "none";
+    }
+}

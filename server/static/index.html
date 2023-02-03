@@ -16,56 +16,50 @@
             <a style="text-decoration: none;" class="texthead2" title="refresh" href="http://localhost:8080/">Tracker</a>
         </div>      
         <div class="bardiv">
-            <form action="/" method="get" href="">
-                <input type="text" class="searchbar" name="inputfilter" list="dataList" autocomplete="off" data-search>
-            </form>
+            <input type="text" class="searchbar" name="inputfilter" list="dataList" autocomplete="off" data-search>
             <div class="filtersshow">Filters
                 <div class="filters">
                     <form action="" method="get">
                         <a class="filtertext">Members</a>
-                        <input type="checkbox" name="submit" value="member1">
+                        <input type="checkbox" name="submit" value="member1" id="checkbox1" onclick="validate()">
                         <label for="membersnumber1">1</label>
-                        <input type="checkbox" name="submit" value="member2">
+                        <input type="checkbox" name="submit" value="member2" id="checkbox2" onclick="validate()">
                         <label for="membersnumber1">2</label>
-                        <input type="checkbox" name="submit" value="member3">
+                        <input type="checkbox" name="submit" value="member3" id="checkbox3" onclick="validate()">
                         <label for="membersnumber1">3</label>
-                        <input type="checkbox" name="submit" value="member4">
+                        <input type="checkbox" name="submit" value="member4" id="checkbox4" onclick="validate()">
                         <label for="membersnumber1">4</label>
-                        <input type="checkbox" name="submit" value="member5">
+                        <input type="checkbox" name="submit" value="member5" id="checkbox5" onclick="validate()">
                         <label for="membersnumber1">5</label>
-                        <input type="checkbox" name="submit" value="member6">
+                        <input type="checkbox" name="submit" value="member6" id="checkbox6" onclick="validate()">
                         <label for="membersnumber1">6</label>
-                        <input type="checkbox" name="submit" value="member7">
+                        <input type="checkbox" name="submit" value="member7" id="checkbox7" onclick="validate()">
                         <label for="membersnumber7">7</label>
-                        <input type="submit" name="submit" class="submitbutton" value="submit">
                     </form>
 
                     <form action="" method="get" id="slide1">
-                        <input type="range" name="firstalbum" min="1963" max="2023" onmousemove="slidechange1()"  onchange="submit(slide1)" id="change"> <span id="result" class="filtertext"></span>
+                        <input type="range" name="firstalbum" min="1963" max="2023" onchange="slidechange1()" id="change"> <span id="result" class="filtertext"></span>
                         <label for="firstalbum" class="filtertext">First album date</label>
                     </form>
 
                     <form action="" method="get" id="slide2">
-                        <input type="range" name="created" min="1962" max="2023" onmousemove="slidechange2()" onchange="submit(slide2)" id="change2"> <span id="result2" class="filtertext"></span>
+                        <input type="range" name="created" min="1962" max="2023" onchange="slidechange2()" id="change2"> <span id="result2" class="filtertext"></span>
                         <label for="created" class="filtertext">Creation date</label>
                     </form>
-
-                    <form action="" method="get">
-                        <input type="text" class="concerts" name="concertsinput"> <span class="filtertext">Location of concerts</span>
-                    </form>
-
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<body>        
+<body>  
     <div class="container">
         <datalist id="dataList">
             {{ range $people := .}}
+            {{ range $v := $people.Members}}
+            <option value="{{ $v }}">{{ $v }}</option>
+            {{ end }}
             <option value="{{ .Name }}">{{ .Name }}</option>
-            <option value="{{ .Members }}">{{ .Members }}</option>
             <option value="{{ .FirstAlbum }}">{{ .FirstAlbum }}</option>
             <option value="{{ .CreationDate }}">{{ .CreationDate }}</option>
             {{ end }}
@@ -75,7 +69,7 @@
             <img src="{{ .Image }}" class="imgsquare" id="imgsquare{{ .Id }}">
             <div class="text", id="divtext{{ .Id }}">
                 <a class="title">{{ .Name }}</a>
-                <br>
+                <br> 
                 <span class="greytext">Created in</span>
                 <a class="basictext">{{ .CreationDate }}</a>
                 <br>
@@ -83,7 +77,7 @@
                 <a class="basictext">{{ .FirstAlbum }}</a>
                 <br>
                 <span class="greytext">Members</span>
-                <a class="basictext">{{ .Members }}</a>
+                <a class="basictext">{{ .Members }}</a> 
             </div>
 
         </div>

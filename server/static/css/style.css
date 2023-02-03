@@ -29,6 +29,7 @@ html {
 
 .basictext {
     font-size: 17px;
+    overflow-wrap: break-word;
 }
 
 .noHover {
@@ -46,7 +47,6 @@ html {
 
 .text {
     color: whitesmoke;
-    position: relative;
     margin-top: 6px;
     margin-left: 9px;
     font-size: 16px;
@@ -190,29 +190,6 @@ body {
     display: block;
 }
 
-.concerts {
-    transition: all 0.5s;
-    font-family: Tisa;
-    font-size: 14px;
-    width: 155px;
-    margin-right: 8px;
-    border-radius: 5px;
-    border: none;
-    padding-left: 3px;
-}
-
-.concerts:hover {
-    background-color: #202329;
-    color: white;
-}
-
-.concerts:focus {
-    background-color: #202329;
-    color: white;
-    outline-color: white;
-    outline: 1px solid;
-}
-
 .filters {
     font-family: Tisa;
     opacity: 0.9;
@@ -221,8 +198,8 @@ body {
     display: none;
     background-color: black;
     color: white;
-    height: 125px;
-    width: 400px;
+    height: 90px;
+    width: 360px;
     transition: all 2s;
 }
 
@@ -255,7 +232,9 @@ body {
 }
 
 @media screen and (max-width: 1122px) {
-    .filtersshow {
-        display: none;
+    .bardiv {
+        transition: all 1s linear;
+        justify-content: start;
+        margin-left: 10px;
     }
 }
