@@ -29,7 +29,7 @@ html {
 
 .basictext {
     font-size: 17px;
-    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .noHover {
@@ -46,10 +46,9 @@ html {
 }
 
 .text {
+    white-space:normal;
     color: whitesmoke;
-    margin-top: 6px;
-    margin-left: 9px;
-    font-size: 16px;
+    font-size: 15px;
     font-family: Tisa;
     width: 100%;
 }

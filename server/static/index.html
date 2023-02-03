@@ -38,12 +38,12 @@
                     </form>
 
                     <form action="" method="get" id="slide1">
-                        <input type="range" name="firstalbum" min="1963" max="2023" onchange="slidechange1()" id="change"> <span id="result" class="filtertext"></span>
+                        <input type="range" name="firstalbum" min="1963" max="2023" onmousemove="slidechange1()" id="change"> <span id="result" class="filtertext"></span>
                         <label for="firstalbum" class="filtertext">First album date</label>
                     </form>
 
                     <form action="" method="get" id="slide2">
-                        <input type="range" name="created" min="1962" max="2023" onchange="slidechange2()" id="change2"> <span id="result2" class="filtertext"></span>
+                        <input type="range" name="created" min="1962" max="2023" onmousemove="slidechange2()" id="change2"> <span id="result2" class="filtertext"></span>
                         <label for="created" class="filtertext">Creation date</label>
                     </form>
                 </div>
@@ -68,18 +68,22 @@
         <div class="box" id="box{{ .Id }}" onclick="enlarge('box{{ .Id }}','imgsquare{{ .Id }}','divtext{{ .Id }}')">
             <img src="{{ .Image }}" class="imgsquare" id="imgsquare{{ .Id }}">
             <div class="text", id="divtext{{ .Id }}">
-                <a class="title">{{ .Name }}</a>
-                <br> 
-                <span class="greytext">Created in</span>
-                <a class="basictext">{{ .CreationDate }}</a>
-                <br>
-                <span class="greytext">First album</span>
-                <a class="basictext">{{ .FirstAlbum }}</a>
-                <br>
-                <span class="greytext">Members</span>
-                <a class="basictext">{{ .Members }}</a> 
+                <div>
+                    <a class="title">{{ .Name }}</a>
+                </div>
+                <div>
+                    <span class="greytext">Created in</span>
+                    <a class="basictext">{{ .CreationDate }}</a>
+                </div>
+                <div>
+                    <span class="greytext">First album</span>
+                    <a class="basictext">{{ .FirstAlbum }}</a>
+                </div>
+                <div>
+                    <span class="greytext">Members</span>
+                    <a class="basictext">{{ .Members }}</a> 
+                </div>
             </div>
-
         </div>
         {{ end }}
     </div>

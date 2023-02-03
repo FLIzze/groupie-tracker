@@ -6,11 +6,11 @@ function enlarge(boxdiv, imgdiv, divtext) {
     if (xDiv.style.width < '400px')
     {
         wDiv.classList.remove("notHidden")
+        wDiv.style.marginLeft = "250px"
         wDiv.classList.add("hidden")
         yDiv.style.borderTopRightRadius = "0px"
         yDiv.style.borderBottomRightRadius = "0px"
         yDiv.classList.add("noHover")
-        yDiv.style.display = "none"
         if (window.innerWidth < "966")
         {
             xDiv.style.width = '500px'
@@ -28,7 +28,7 @@ function enlarge(boxdiv, imgdiv, divtext) {
         wDiv.classList.add("hidden")
         wDiv.classList.remove("notHidden")
         yDiv.classList.remove("noHover")
-        yDiv.style.display = "block"
+        wDiv.style.marginLeft = "5px"
         yDiv.style.borderTopRightRadius = "10px"
         yDiv.style.borderBottomRightRadius = "10px"
         xDiv.style.width = '240px' 

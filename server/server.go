@@ -45,3 +45,97 @@ func Handler_main(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("./static/index.html"))
 	tmpl.Execute(w, text)
 }
+
+// type AllData struct {
+//     People    []people
+//     Locations Index
+//     Dates     Index_date
+// }
+
+// type people struct {
+//     Id           int      `json:"Id"`
+//     Name         string   `json:"Name"`
+//     Image        string   `json:"Image"`
+//     Members      []string `json:"Members"`
+//     FirstAlbum   string   `json:"FirstAlbum"`
+//     CreationDate int      `json:"CreationDate"`
+// }
+// type Index struct {
+//     Index []locations `json:"index"`
+// }
+
+// type Index_date struct {
+//     Index []dates `json:"index"`
+// }
+
+// type dates struct {
+//     Id   int      `json:"id"`
+//     Date []string `json:"dates"`
+// }
+
+// type locations struct {
+//     Id       int      `json:"id"`
+//     Location []string `json:"locations"`
+//     Date     string   `json:"dates"`
+// }
+// text := []people{}
+// jsonErr := json.Unmarshal(body, &text)
+// if jsonErr != nil {
+// 	panic(jsonErr)
+// }
+
+// resp, err := http.Get(url2)
+// if err != nil {
+// 	print(err)
+// }
+// body2, readError := ioutil.ReadAll(resp.Body)
+// if readError != nil {
+// 	panic(readError)
+// }
+
+// txt := Index{}
+// jsonError := json.Unmarshal(body2, &txt)
+// if jsonError != nil {
+// 	panic(jsonError)
+// }
+
+// res2, err := http.Get(url3)
+// if err != nil {
+// 	print(err)
+// }
+// body3, readErr := ioutil.ReadAll(res2.Body)
+// if readErr != nil {
+// 	panic(readErr)
+// }
+
+// date := Index_date{}
+// jsonerr := json.Unmarshal(body3, &date)
+// if jsonerr != nil {
+// 	panic(jsonerr)
+// }
+
+// allData := AllData{
+// 	People:    text,
+// 	Locations: txt,
+// 	Dates:     date,
+// }
+
+// tmpl := template.Must(template.ParseFiles("./static/index.html"))
+
+// principalinput := r.URL.Query().Get("inputfilter")
+// fmt.Println(principalinput)
+
+// inputconcert := r.URL.Query().Get("concertsinput")
+// fmt.Println(inputconcert)
+
+// inputslide1 := r.URL.Query().Get("firstalbum")
+// fmt.Println(inputslide1)
+
+// inputslide2 := r.URL.Query().Get("created")
+// fmt.Println(inputslide2)
+
+// checkbox := r.URL.Query().Get("submit")
+// fmt.Println(checkbox)
+
+// tmpl.Execute(w, allData)
+// }
