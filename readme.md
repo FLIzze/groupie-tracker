@@ -9,7 +9,23 @@ Ce projet est réalisé en HTML/CSS/JAVASCRIPT/GOLANG
 ## Équipe 
 BEL Alexandre
 
- Lebourcq Lyse
+Lebourcq Lyse
+
+
+## Comment le télécharger et le lancer ?
+
+```
+git clone https://ytrack.learn.ynov.com/git/balexand/groupie-tracker.git
+```
+```
+cd groupie-tracker/server
+```
+```
+go run serveur.go
+```
+```
+vous pouvez ensuite aller sur votre navigateur à cette adresse : http://localhost:8080/
+```
 
 ## Prévisualisation du site
 
