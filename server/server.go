@@ -122,20 +122,5 @@ func Handler_main(w http.ResponseWriter, r *http.Request) {
 
 // tmpl := template.Must(template.ParseFiles("./static/index.html"))
 
-// principalinput := r.URL.Query().Get("inputfilter")
-// fmt.Println(principalinput)
-
-// inputconcert := r.URL.Query().Get("concertsinput")
-// fmt.Println(inputconcert)
-
-// inputslide1 := r.URL.Query().Get("firstalbum")
-// fmt.Println(inputslide1)
-
-// inputslide2 := r.URL.Query().Get("created")
-// fmt.Println(inputslide2)
-
-// checkbox := r.URL.Query().Get("submit")
-// fmt.Println(checkbox)
-
 // tmpl.Execute(w, allData)
 // }
